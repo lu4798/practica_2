@@ -42,6 +42,6 @@ def test_danish_stopwords():
     assert function("efter havde eFter hund HUnd havdE kat ","danish")==[["hund",2],["kat", 1]]
 
 def test_turkish_stopwords():
-    assert function("onlarýn tüM eFter hund HUnd havdE kat ","danish")==[["hund",2],["kat", 1]]
+    assert function("onlarýn tüM kedi KEDI kedí hund HUnd havdE kat ","danish")==[["hund",2],["kat", 1]]
 
 
