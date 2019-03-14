@@ -1,21 +1,38 @@
 import re
-
 from stop_words import get_stop_words
 
+def function(array):
+    acceptable_languages = ['arabic', 'bulgarian', 'catalan', 'czech', 'danish', 'dutch', 'english','finnish', 'french', 'german', 'hungarian', 'indonesian', 'italian',
+                            'norwegian', 'polish', 'portuguese', 'romanian', 'russian', 'spanish', 'swedish', 'turkish', 'ukrainian']
 
-def function(array, language):
-
-    acceptable_languages = ['es','fr','gr', 'arabic', 'bulgarian', 'catalan', 'czech', 'danish', 'dutch', 'english','finnish', 'french', 'german']
-    if not isinstance(array,str) or language not in acceptable_languages:
+    if not isinstance(array,str):
         raise TypeError
 
-    forbidden_words = get_stop_words(language)
-    list_aux = re.sub("[^\w]", " ", array.lower()).split()
     string_list_lowercase = []
     final_list = []
+    list_aux = []
+    forbidden_words = []
+
+    for language in acceptable_languages:
+        forbidden_words.append(get_stop_words(language))
+
+    word_list = (array.lower()).split()
+
+    for word in word_list:
+        is_stopword = 0
+        for forbidden in forbidden_words:
+
+            if word in forbidden and is_stopword == 0:
+                is_stopword = 1
+
+        if is_stopword == 0:
+            list_aux.append(word)
+
     for x in list_aux:
-        if x not in forbidden_words:
-            string_list_lowercase.append(x)
+        reemplazo = re.sub("[^\w]", "", x)
+        if reemplazo != '':
+            string_list_lowercase.append(re.sub("[^\w]", "", x))
+
     while len(string_list_lowercase) > 0:
         current_word = string_list_lowercase[0]
         counter = string_list_lowercase.count(current_word)
@@ -23,6 +40,5 @@ def function(array, language):
             string_list_lowercase.remove(current_word)
 
         final_list.append([current_word,counter])
+        
     return sorted(final_list ,key= lambda x : x[1],reverse=True)
-
-print(function("Me comi Patatas to-wapas el jves, jves, jVes JVES ME me ME comI,,    a a ante contra de",'es'))
