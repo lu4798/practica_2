@@ -14,6 +14,9 @@ def test_stop_words():
 def test_two_equal_words_and_stopwords():
     assert function("hola de hola")==[["hola", 2]]
 
+def test_two_equal_words_and_two_stopwords():
+    assert function("hola de a hola") == [["hola", 2]]
+
 def test_two_pairs_of_equal_words():
     assert function("hola adios adios hola")==[["hola", 2],["adios", 2]]
 
