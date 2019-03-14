@@ -5,7 +5,8 @@ from stop_words import get_stop_words
 
 def function(array, language):
 
-    acceptable_languages = ['es','fr','gr', 'arabic', 'bulgarian', 'catalan', 'czech', 'danish', 'dutch', 'english','finnish', 'french', 'german']
+    acceptable_languages = ['arabic', 'bulgarian', 'catalan', 'czech', 'danish', 'dutch', 'english','finnish', 'french', 'german', 'hungarian', 'indonesian', 'italian',
+                            'norwegian', 'polish', 'portuguese', 'romanian', 'russian', 'spanish', 'swedish', 'turkish', 'ukrainian']
     if not isinstance(array,str) or language not in acceptable_languages:
         raise TypeError
 

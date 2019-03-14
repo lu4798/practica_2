@@ -38,7 +38,10 @@ def test_bulgarian_stopwords():
 def test_catalan_stopwords():
     assert function("gos goS consegueixo entre perquè gat PLUJA ","catalan")==[["gos",2],["gat",1], ["pluja", 1]]
 
-def test_czech_stopwords():
-    assert function("pokuD Napiste naPiste déšť Dest Déšť kočka","czech")==[["déšť",2],["kočka", 1]]
+def test_danish_stopwords():
+    assert function("efter havde eFter hund HUnd havdE kat ","danish")==[["hund",2],["kat", 1]]
+
+def test_turkish_stopwords():
+    assert function("onlarýn tüM eFter hund HUnd havdE kat ","danish")==[["hund",2],["kat", 1]]
 
 
