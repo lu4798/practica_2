@@ -7,3 +7,8 @@ Para ejecutar los tests usar
 $ pytest practica_2\test_function.py -v
 Para mostrar el coverage
 $ pytest --cov=practica_2 practica_2\test_function.py
+
+Realizado por:
+Lucia Montesinos //
+Alonso Rapado //
+Carlos Villasante //
