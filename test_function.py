@@ -8,11 +8,11 @@ def test_argument_not_string():
 def test_two_same_words():
     assert word_counter("hola hola")==[["hola", 2]]
 
-def test_many_spaces():
-    assert word_counter("hola           hola") == [["hola", 2]]
-
 def test_with_numbers():
     assert word_counter("ho1a ho1a 5 5 7")==[["ho1a", 2],["5",2],["7",1]]
+
+def test_many_spaces():
+    assert word_counter("hola           hola") == [["hola", 2]]
 
 def test_stop_words():
     assert word_counter("de")==[]
