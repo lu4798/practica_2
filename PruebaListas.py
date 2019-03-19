@@ -1,7 +1,7 @@
 import re
 from stop_words import get_stop_words
 
-def function(array):
+def word_counter(array):
     acceptable_languages = ['arabic', 'bulgarian', 'catalan', 'czech', 'danish', 'dutch', 'english','finnish', 'french', 'german', 'hungarian', 'indonesian', 'italian',
                             'norwegian', 'polish', 'portuguese', 'romanian', 'russian', 'spanish', 'swedish', 'turkish', 'ukrainian']
 
